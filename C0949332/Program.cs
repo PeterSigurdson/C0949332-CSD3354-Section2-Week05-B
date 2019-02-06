@@ -6,8 +6,9 @@ namespace C0949332
     {
         static void Main(string[] args)
         {
-            // LinkdLists and NODES
-            Console.WriteLine("Hello World!");
+            LinkedList a = new LinkedList();
+            a.run();
+            a.WalkOverTheList();
         }
     }
 
@@ -27,6 +28,8 @@ namespace C0949332
 
     class LinkedList
     {
+        public Dog current;
+        public Dog Head;
         public Dog Peanut = new Dog();
         public Dog Fifi = new Dog();
         public Dog Jordan = new Dog();
@@ -34,18 +37,30 @@ namespace C0949332
 
         public void run()
         {
+            Head = Peanut;
             Peanut.DogName = "Peanut";
             Peanut.DogBreed = "Bichon";
 
-            Fifi.DogName = "Peanut";
-            Fifi.DogBreed = "Bichon";
+            Fifi.DogName = "Fifi";
+            Fifi.DogBreed = "Poodle";
 
-            Jordan.DogName = "Peanut";
-            Jordan.DogBreed = "Bichon";
+            Jordan.DogName = "Jordan";
+            Jordan.DogBreed = "germansheppard";
 
-            Fido.DogName = "Peanut";
-            Fido.DogBreed = "Bichon";
+            Fido.DogName = "Fido";
+            Fido.DogBreed = "Beagle";
 
+        }
+
+        public void WalkOverTheList()
+        {
+            current = Head;
+            while (true)
+            {
+                Console.WriteLine(current.DogName);
+                current = current.nextDog;
+
+            }
         }
 
     }
